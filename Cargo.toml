@@ -11,6 +11,9 @@ license = "MIT OR Apache-2.0"
 keywords = ["game", "gamedev", "video game", "voxel"]
 categories = ["game-development", "games"]
 
+[workspace.dependencies]
+bevy = "0.12"
+
 [package]
 name = "voxel"
 version.workspace = true
@@ -23,3 +26,12 @@ keywords.workspace = true
 categories.workspace = true
 
 [dependencies]
+bevy = { workspace = true, features = ["dynamic_linking"] }
+
+# Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
