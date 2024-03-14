@@ -12,7 +12,7 @@ keywords = ["game", "gamedev", "video game", "voxel"]
 categories = ["game-development", "games"]
 
 [workspace.dependencies]
-bevy = "0.12"
+bevy = "0.13"
 
 [package]
 name = "voxel"
